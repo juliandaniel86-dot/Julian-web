@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -36,7 +37,7 @@
         
         /* Ensure responsive height for main content */
         .main-container {
-            min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+            min-height: calc(100vh - 80px - 53px); /* Adjust based on navbar + footer height */
         }
     </style>
 </head>
@@ -45,11 +46,20 @@
     <header class="sticky top-0 bg-white dark:bg-gray-900 shadow-md z-50 transition-colors duration-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
             <h1 class="text-2xl font-bold text-primary">Portofolio TKJ</h1>
-            <nav class="space-x-4">
+            <nav class="space-x-4 flex items-center">
                 <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300 active-link" data-page="beranda">Beranda</button>
                 <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="tentang">Tentang Saya</button>
                 <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="portofolio">Portofolio</button>
                 <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="kontak">Kontak</button>
+
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300 ml-4" aria-label="Toggle dark mode">
+                    <svg id="sun-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg id="moon-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -71,12 +81,11 @@
                 </button>
             </div>
             <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
-                                <img 
+                <img 
                     src="WhatsApp Image 2025-10-27 at 09.07.42 (2).png" 
                     alt="Foto Profil Julian Daniel Rajiman" 
                     class="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-full shadow-xl border-4 border-secondary/50"
                 />
-                </div>
             </div>
         </section>
 
@@ -261,6 +270,49 @@
                         (Arahkan tautan '#' ini ke folder Google Drive atau cloud storage yang berisi file PDF/dokumen Anda)
                     </p>
                 </div>
+                
+                <div class="mt-12 pt-8 border-t-2 border-primary/50 dark:border-primary/30 text-center bg-primary/5 dark:bg-gray-700/30 rounded-lg p-6">
+                    <h2 class="text-3xl font-bold text-primary mb-6 flex items-center justify-center space-x-3">
+                        <span>📤 Kirim Tugas / Proyek Mandiri</span>
+                    </h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-3xl mx-auto">
+                        Gunakan formulir di bawah ini untuk mengirimkan tugas atau proyek terbaru Anda untuk didokumentasikan.
+                    </p>
+                    <div class="max-w-xl mx-auto">
+                        <form action="#" method="POST" enctype="multipart/form-data" class="space-y-4 text-left">
+                            <div>
+                                <label for="project_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nama Tugas/Proyek</label>
+                                <input type="text" id="project_name" name="project_name" class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-secondary focus:border-secondary dark:bg-gray-700 dark:text-text-light" placeholder="Contoh: Konfigurasi VLAN & Mikrotik" required>
+                            </div>
+                            <div>
+                                <label for="file_upload" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Pilih File Tugas (Max 5MB)</label>
+                                <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md dark:border-gray-600">
+                                    <div class="space-y-1 text-center">
+                                        <svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                            <path d="M28 8H12a4 4 0 00-4 4v20m32-12v12a4 4 0 01-4 4H12a4 4 0 01-4-4V12a4 4 0 014-4h20m4 12V8a4 4 0 00-4-4H12a4 4 0 00-4 4v28a4 4 0 004 4h24a4 4 0 004-4v-8m-4-12l-8 8-8-8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <div class="flex text-sm text-gray-600 dark:text-gray-400">
+                                            <label for="file-upload" class="relative cursor-pointer bg-white dark:bg-gray-800 rounded-md font-medium text-secondary hover:text-orange-400 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-secondary">
+                                                <span>Unggah file</span>
+                                                <input id="file-upload" name="file-upload" type="file" class="sr-only" accept=".zip,.pdf,.docx,.sb3,.apk,.pkt">
+                                            </label>
+                                            <p class="pl-1">atau *drag and drop*</p>
+                                        </div>
+                                        <p class="text-xs text-gray-500 dark:text-gray-500">
+                                            DOCX, PDF, ZIP, PKT, SB3, atau APK (maks 5MB)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-secondary hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-md shadow-lg transition duration-300 transform hover:scale-[1.01]">
+                                Kirim Tugas Sekarang
+                            </button>
+                            <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">
+                                *Catatan: Karena ini adalah halaman statis, tombol ini hanya untuk visualisasi. Untuk fungsionalitas pengiriman yang sesungguhnya, perlu diintegrasikan dengan sistem backend (misalnya Google Forms/Drive atau server khusus).
+                            </p>
+                        </form>
+                    </div>
+                </div>
                 </div>
         </section>
 
@@ -315,6 +367,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             const pages = ['beranda', 'tentang', 'portofolio', 'kontak'];
             const navLinks = document.querySelectorAll('.nav-link');
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
 
             /**
              * Function to display the selected page content
@@ -348,6 +404,46 @@
                     }
                 });
             }
+
+            // --- Dark Mode Logic Start ---
+
+            /**
+             * Function to apply the theme (dark or light)
+             * @param {boolean} isDark - True for dark mode, False for light mode
+             */
+            const applyTheme = (isDark) => {
+                if (isDark) {
+                    body.classList.add('dark');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    body.classList.remove('dark');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                    localStorage.setItem('theme', 'light');
+                }
+            };
+
+            // Check saved theme or system preference on load
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme) {
+                applyTheme(savedTheme === 'dark');
+            } else if (prefersDark) {
+                applyTheme(true);
+            } else {
+                applyTheme(false); // Default to light mode if no preference is found
+            }
+            
+            // Toggle button event listener
+            themeToggle.addEventListener('click', () => {
+                const isDark = body.classList.contains('dark');
+                applyTheme(!isDark);
+            });
+
+            // --- Dark Mode Logic End ---
 
             // Set up click listeners for navigation
             navLinks.forEach(link => {
