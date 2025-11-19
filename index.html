@@ -1,263 +1,263 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Siswa TKJ SMKN 12 Samarinda</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'primary': '#1D4ED8', // Tailwind blue-700
-                        'secondary': '#F97316', // Tailwind orange-500
-                        'bg-dark': '#1F2937', // Tailwind gray-800
-                        'text-light': '#F3F4F6', // Tailwind gray-100
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Custom styles for smooth transitions */
-        .page-content {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Siswa TKJ SMKN 12 Samarinda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1D4ED8', // Tailwind blue-700
+                        'secondary': '#F97316', // Tailwind orange-500
+                        'bg-dark': '#1F2937', // Tailwind gray-800
+                        'text-light': '#F3F4F6', // Tailwind gray-100
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for smooth transitions */
+        .page-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Ensure responsive height for main content */
-        .main-container {
-            min-height: calc(100vh - 80px - 53px); /* Adjust based on navbar + footer height */
-        }
-    </style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Ensure responsive height for main content */
+        .main-container {
+            min-height: calc(100vh - 80px - 53px); /* Adjust based on navbar + footer height */
+        }
+    </style>
 </head>
 <body class="bg-gray-100 dark:bg-bg-dark font-sans text-gray-900 dark:text-text-light transition-colors duration-500">
 
-    <header class="sticky top-0 bg-white dark:bg-gray-900 shadow-md z-50 transition-colors duration-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-            <h1 class="text-2xl font-bold text-primary">Portofolio TKJ</h1>
-            <nav class="space-x-4 flex items-center">
-                <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300 active-link" data-page="beranda">Beranda</button>
-                <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="tentang">Tentang Saya</button>
-                <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="portofolio">Portofolio</button>
-                <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="kontak">Kontak</button>
+    <header class="sticky top-0 bg-white dark:bg-gray-900 shadow-md z-50 transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <h1 class="text-2xl font-bold text-primary">Portofolio TKJ</h1>
+            <nav class="space-x-4 flex items-center">
+                <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300 active-link" data-page="beranda">Beranda</button>
+                <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="tentang">Tentang Saya</button>
+                <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="portofolio">Portofolio</button>
+                <button class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary px-3 py-2 rounded-md font-medium transition duration-300" data-page="kontak">Kontak</button>
 
-                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300 ml-4" aria-label="Toggle dark mode">
-                    <svg id="sun-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                    <svg id="moon-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                </button>
-            </nav>
-        </div>
-    </header>
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-yellow-400 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300 ml-4" aria-label="Toggle dark mode">
+                    <svg id="sun-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg id="moon-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 main-container">
-        
-        <section id="beranda" class="page-content bg-white dark:bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col md:flex-row items-center justify-between text-center md:text-left">
-            <div class="md:w-3/5">
-                <p class="text-xl text-secondary mb-2">Halo, Selamat Datang!</p>
-                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-                    Saya <span class="text-primary">[Julian Daniel Rajiman]</span>,
-                    <br class="hidden sm:inline"> Siswa TKJ.
-                </h2>
-                <p class="text-gray-600 dark:text-gray-400 text-lg mb-6 max-w-lg mx-auto md:mx-0">
-                    Siswa Jurusan Teknik Komputer dan Jaringan (TKJ) dari SMKN 12 Samarinda. Siap membangun dan mengelola infrastruktur digital!
-                </p>
-                <button onclick="showPage('portofolio')" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                    Lihat Keahlian Saya
-                </button>
-            </div>
-            <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
-                <img 
-                    src="WhatsApp Image 2025-10-27 at 09.07.42 (2).png" 
-                    alt="Foto Profil Julian Daniel Rajiman" 
-                    class="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-full shadow-xl border-4 border-secondary/50"
-                />
-            </div>
-        </section>
+    <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 main-container">
+        
+        <section id="beranda" class="page-content bg-white dark:bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <div class="md:w-3/5">
+                <p class="text-xl text-secondary mb-2">Halo, Selamat Datang!</p>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                    Saya <span class="text-primary">[Julian Daniel Rajiman]</span>,
+                    <br class="hidden sm:inline"> Siswa TKJ.
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg mb-6 max-w-lg mx-auto md:mx-0">
+                    Siswa Jurusan Teknik Komputer dan Jaringan (TKJ) dari SMKN 12 Samarinda. Siap membangun dan mengelola infrastruktur digital!
+                </p>
+                <button onclick="showPage('portofolio')" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Lihat Keahlian Saya
+                </button>
+            </div>
+            <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
+                <img 
+                    src="WhatsApp Image 2025-10-27 at 09.07.42 (2).png" 
+                    alt="Foto Profil Julian Daniel Rajiman" 
+                    class="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-full shadow-xl border-4 border-secondary/50"
+                />
+            </div>
+        </section>
 
-        <section id="tentang" class="page-content">
-            <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl">
-                <h2 class="text-4xl font-bold text-primary mb-6 border-b-2 border-primary/50 pb-2">Tentang Saya</h2>
-                
-                <div class="grid md:grid-cols-2 gap-8 text-lg">
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-3 text-secondary">Latar Belakang Pendidikan</h3>
-                        <p class="mb-4 text-gray-700 dark:text-gray-300">
-                            Saya adalah siswa aktif di SMKN 12 Samarinda, mengambil Jurusan Teknik Komputer dan Jaringan (TKJ). Selama masa studi, saya fokus mendalami berbagai aspek penting dalam dunia IT, mulai dari perangkat keras (hardware) hingga konfigurasi jaringan skala kecil hingga menengah.
-                        </p>
-                        <ul class="space-y-2 list-disc list-inside text-gray-600 dark:text-gray-400">
-                            <li>Sekolah:    SMKN 12 Samarinda</li>
-                            <li>Jurusan:    Teknik Komputer dan Jaringan (TKJ)</li>
-                            <li>Masa Studi: 2023 - 2026</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-3 text-secondary">Visi Karir & Filosofi Kerja</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
-                            Saya percaya bahwa pondasi yang kuat dalam jaringan dan hardware adalah kunci keberhasilan sistem IT. Saya memiliki motivasi tinggi untuk terus belajar, khususnya dalam bidang Game Development, menjadikan keahlian teknis TKJ sebagai fondasi untuk memahami arsitektur sistem dan troubleshooting performa.
-                        </p>
-                        <p class="text-gray-700 dark:text-gray-300">
-                            Keterampilan yang saya miliki adalah hasil dari kurikulum sekolah yang intensif dan praktik mandiri. Saya siap mengaplikasikan logika sistematis dari jaringan ke dunia pengembangan perangkat lunak yang kompleks.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id="tentang" class="page-content">
+            <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl">
+                <h2 class="text-4xl font-bold text-primary mb-6 border-b-2 border-primary/50 pb-2">Tentang Saya</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 text-lg">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-secondary">Latar Belakang Pendidikan</h3>
+                        <p class="mb-4 text-gray-700 dark:text-gray-300">
+                            Saya adalah siswa aktif di SMKN 12 Samarinda, mengambil Jurusan Teknik Komputer dan Jaringan (TKJ). Selama masa studi, saya fokus mendalami berbagai aspek penting dalam dunia IT, mulai dari perangkat keras (hardware) hingga konfigurasi jaringan skala kecil hingga menengah.
+                        </p>
+                        <ul class="space-y-2 list-disc list-inside text-gray-600 dark:text-gray-400">
+                            <li>Sekolah:    SMKN 12 Samarinda</li>
+                            <li>Jurusan:    Teknik Komputer dan Jaringan (TKJ)</li>
+                            <li>Masa Studi: 2023 - 2026</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-secondary">Visi Karir & Filosofi Kerja</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Saya percaya bahwa pondasi yang kuat dalam jaringan dan hardware adalah kunci keberhasilan sistem IT. Saya memiliki motivasi tinggi untuk terus belajar, khususnya dalam bidang Game Development, menjadikan keahlian teknis TKJ sebagai fondasi untuk memahami arsitektur sistem dan troubleshooting performa.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Keterampilan yang saya miliki adalah hasil dari kurikulum sekolah yang intensif dan praktik mandiri. Saya siap mengaplikasikan logika sistematis dari jaringan ke dunia pengembangan perangkat lunak yang kompleks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="portofolio" class="page-content">
-            <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl">
-                <h2 class="text-4xl font-bold text-primary mb-8 text-center">Portofolio Keahlian</h2>
-                <p class="text-center text-xl text-gray-600 dark:text-gray-400 mb-10">
-                    Berikut adalah keahlian utama yang telah saya kuasai selama menempuh pendidikan di Jurusan TKJ.
-                </p>
+        <section id="portofolio" class="page-content">
+            <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl">
+                <h2 class="text-4xl font-bold text-primary mb-8 text-center">Portofolio Keahlian</h2>
+                <p class="text-center text-xl text-gray-600 dark:text-gray-400 mb-10">
+                    Berikut adalah keahlian utama yang telah saya kuasai selama menempuh pendidikan di Jurusan TKJ.
+                </p>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    
-                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-secondary">
-                        <div class="text-5xl text-secondary mb-4">⚙️</div>
-                        <h3 class="text-2xl font-semibold mb-3">Konfigurasi Mikrotik</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
-                            Mampu melakukan konfigurasi perangkat Mikrotik RouterOS untuk berbagai kebutuhan jaringan.
-                        </p>
-                        <p class="text-sm font-medium text-primary">
-                            Alat: Winbox, Terminal CLI.
-                        </p>
-                        <ul class="mt-4 space-y-1 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
-                            <li>Setup DHCP Server/Client</li>
-                            <li>Manajemen Bandwidth (Simple Queue)</li>
-                            <li>Firewall dan NAT</li>
-                            <li>Konfigurasi Hotspot Sederhana</li>
-                        </ul>
-                    </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-secondary">
+                        <div class="text-5xl text-secondary mb-4">⚙️</div>
+                        <h3 class="text-2xl font-semibold mb-3">Konfigurasi Mikrotik</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Mampu melakukan konfigurasi perangkat Mikrotik RouterOS untuk berbagai kebutuhan jaringan.
+                        </p>
+                        <p class="text-sm font-medium text-primary">
+                            Alat: Winbox, Terminal CLI.
+                        </p>
+                        <ul class="mt-4 space-y-1 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                            <li>Setup DHCP Server/Client</li>
+                            <li>Manajemen Bandwidth (Simple Queue)</li>
+                            <li>Firewall dan NAT</li>
+                            <li>Konfigurasi Hotspot Sederhana</li>
+                        </ul>
+                    </div>
 
-                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-primary">
-                        <div class="text-5xl text-primary mb-4">🌍</div>
-                        <h3 class="text-2xl font-semibold mb-3">Pembuatan Topologi Jaringan</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
-                            Mahir dalam mendesain, mensimulasikan, dan menganalisis topologi jaringan.
-                        </p>
-                        <p class="text-sm font-medium text-secondary">
-                            Alat: Cisco Packet Tracer.
-                        </p>
-                        <ul class="mt-4 space-y-1 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
-                            <li>Desain Jaringan LAN/WAN</li>
-                            <li>Simulasi Routing (Static/Dynamic)</li>
-                            <li>Konfigurasi Switch VLAN</li>
-                            <li>Pengujian Konektivitas Jaringan</li>
-                        </ul>
-                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-primary">
+                        <div class="text-5xl text-primary mb-4">🌍</div>
+                        <h3 class="text-2xl font-semibold mb-3">Pembuatan Topologi Jaringan</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Mahir dalam mendesain, mensimulasikan, dan menganalisis topologi jaringan.
+                        </p>
+                        <p class="text-sm font-medium text-secondary">
+                            Alat: Cisco Packet Tracer.
+                        </p>
+                        <ul class="mt-4 space-y-1 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                            <li>Desain Jaringan LAN/WAN</li>
+                            <li>Simulasi Routing (Static/Dynamic)</li>
+                            <li>Konfigurasi Switch VLAN</li>
+                            <li>Pengujian Konektivitas Jaringan</li>
+                        </ul>
+                    </div>
 
-                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-secondary">
-                        <div class="text-5xl text-secondary mb-4">🖥️</div>
-                        <h3 class="text-2xl font-semibold mb-3">Merakit & Instalasi Komputer</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4">
-                            Keterampilan praktis dalam perakitan hardware, instalasi OS, dan pemecahan masalah hardware.
-                        </p>
-                        <p class="text-sm font-medium text-primary">
-                            Alat: Toolkit Hardware, Sistem Operasi.
-                        </p>
-                        <ul class="mt-4 space-y-1 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
-                            <li>Perakitan PC dari komponen dasar</li>
-                            <li>Instalasi Sistem Operasi (Windows/Linux)</li>
-                            <li>Troubleshooting Hardware Dasar</li>
-                            <li>Manajemen Kabel (Cable Management)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
-                    <h2 class="text-3xl font-bold text-secondary mb-6 text-center">Roadmap & Visi Menjadi Game Developer **Kelas Dunia** 🎮🔥</h2>
-                    <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
-                        Meskipun pondasi saya kuat di Teknik Komputer dan Jaringan (TKJ), ambisi saya melampaui batas. Saya sedang membangun jembatan dari infrastruktur ke kreasi digital, dengan tujuan akhir menjadi seorang **Game Developer** yang inovatif dan mendunia.
-                    </p>
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] border-t-4 border-secondary">
+                        <div class="text-5xl text-secondary mb-4">🖥️</div>
+                        <h3 class="text-2xl font-semibold mb-3">Merakit & Instalasi Komputer</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Keterampilan praktis dalam perakitan hardware, instalasi OS, dan pemecahan masalah hardware.
+                        </p>
+                        <p class="text-sm font-medium text-primary">
+                            Alat: Toolkit Hardware, Sistem Operasi.
+                        </p>
+                        <ul class="mt-4 space-y-1 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                            <li>Perakitan PC dari komponen dasar</li>
+                            <li>Instalasi Sistem Operasi (Windows/Linux)</li>
+                            <li>Troubleshooting Hardware Dasar</li>
+                            <li>Manajemen Kabel (Cable Management)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
+                    <h2 class="text-3xl font-bold text-secondary mb-6 text-center">Roadmap & Visi Menjadi Game Developer **Kelas Dunia** 🎮🔥</h2>
+                    <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
+                        Meskipun pondasi saya kuat di Teknik Komputer dan Jaringan (TKJ), ambisi saya melampaui batas. Saya sedang membangun jembatan dari infrastruktur ke kreasi digital, dengan tujuan akhir menjadi seorang **Game Developer** yang inovatif dan mendunia.
+                    </p>
 
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-primary/5 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-primary shadow-md">
-                            <h3 class="text-xl font-semibold mb-3 text-primary">Fase I: Penaklukan Akademik & Fondasi (2023 - 2026)</h3>
-                            <p class="text-gray-700 dark:text-gray-300">
-                                Lulus dari TKJ dengan predikat terbaik. Segera melanjutkan studi di jurusan IT/Ilmu Komputer unggulan, fokus pada Algoritma Tingkat Lanjut dan Arsitektur Grafis Komputer.
-                            </p>
-                        </div>
-                        <div class="bg-secondary/5 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-secondary shadow-md">
-                            <h3 class="text-xl font-semibold mb-3 text-secondary">Fase II: Penguasaan Teknologi Inti (2027 - 2030)</h3>
-                            <p class="text-gray-700 dark:text-gray-300">
-                                Menguasai Unreal Engine 5 dan C++ hingga level Master. Berpartisipasi dan memenangkan Game Jam internasional. Membuat setidaknya 3 Prototype Game berkualitas tinggi yang siap dipublikasikan.
-                            </p>
-                        </div>
-                        <div class="bg-primary/5 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-primary shadow-md">
-                            <h3 class="text-xl font-semibold mb-3 text-primary">Fase III: Jaringan Global & Kolaborasi (2031+)</h3>
-                            <p class="text-gray-700 dark:text-gray-300">
-                                Bekerja di studio Game AAA terkemuka atau mendirikan Studio Game Indie sendiri yang berorientasi global, memanfaatkan pemahaman kuat tentang infrastruktur multiplayer online dari background TKJ.
-                            </p>
-                        </div>
-                        <div class="bg-secondary/5 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-secondary shadow-md">
-                            <h3 class="text-xl font-semibold mb-3 text-secondary">Sinergi Tak Tertandingi (TKJ & Game Dev)</h3>
-                            <p class="text-gray-700 dark:text-gray-300">
-                                Logika Jaringan yang sistematis menjadi tool rahasia saya dalam mengatasi bug dan merancang arsitektur kode yang efisien, memberikan keunggulan kompetitif dalam pengembangan Game yang mulus dan bebas lag.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700 text-center">
-                    <h2 class="text-3xl font-bold text-primary mb-6">Galeri Tugas & Proyek 📂</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto">
-                        Lihat hasil kerja dan proyek-proyek praktikum yang telah saya selesaikan selama masa studi dan inisiatif pengembangan mandiri.
-                    </p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-primary/5 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-primary shadow-md">
+                            <h3 class="text-xl font-semibold mb-3 text-primary">Fase I: Penaklukan Akademik & Fondasi (2023 - 2026)</h3>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                Lulus dari TKJ dengan predikat terbaik. Segera melanjutkan studi di jurusan IT/Ilmu Komputer unggulan, fokus pada Algoritma Tingkat Lanjut dan Arsitektur Grafis Komputer.
+                            </p>
+                        </div>
+                        <div class="bg-secondary/5 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-secondary shadow-md">
+                            <h3 class="text-xl font-semibold mb-3 text-secondary">Fase II: Penguasaan Teknologi Inti (2027 - 2030)</h3>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                Menguasai Unreal Engine 5 dan C++ hingga level Master. Berpartisipasi dan memenangkan Game Jam internasional. Membuat setidaknya 3 Prototype Game berkualitas tinggi yang siap dipublikasikan.
+                            </p>
+                        </div>
+                        <div class="bg-primary/5 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-primary shadow-md">
+                            <h3 class="text-xl font-semibold mb-3 text-primary">Fase III: Jaringan Global & Kolaborasi (2031+)</h3>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                Bekerja di studio Game AAA terkemuka atau mendirikan Studio Game Indie sendiri yang berorientasi global, memanfaatkan pemahaman kuat tentang infrastruktur multiplayer online dari background TKJ.
+                            </p>
+                        </div>
+                        <div class="bg-secondary/5 dark:bg-gray-700/50 p-6 rounded-lg border-l-4 border-secondary shadow-md">
+                            <h3 class="text-xl font-semibold mb-3 text-secondary">Sinergi Tak Tertandingi (TKJ & Game Dev)</h3>
+                            <p class="text-gray-700 dark:text-gray-300">
+                                Logika Jaringan yang sistematis menjadi tool rahasia saya dalam mengatasi bug dan merancang arsitektur kode yang efisien, memberikan keunggulan kompetitif dalam pengembangan Game yang mulus dan bebas lag.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700 text-center">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Galeri Tugas & Proyek 📂</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto">
+                        Lihat hasil kerja dan proyek-proyek praktikum yang telah saya selesaikan selama masa studi dan inisiatif pengembangan mandiri.
+                    </p>
 
-                    <h3 class="text-2xl font-semibold text-secondary mb-4">Proyek Game Developer</h3>
-                    <div class="flex flex-wrap justify-center gap-4 mb-6">
-                        <a href="Game%20Sampah_1_1.0.apk" download class="flex items-center space-x-2 bg-primary hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
-                            <span class="text-xl">📱</span>
-                            <span>Game Sampah (APK)</span>
-                        </a>
-                        <a href="Laporan_Game_Sampah%20Julian%20Daniel%20Rajiman%20Dan%20Ahmad%20rayhan.docx" download class="flex items-center space-x-2 bg-primary/80 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
-                            <span class="text-xl">📄</span>
-                            <span>Laporan Game Sampah (Docx)</span>
-                        </a>
-                        <a href="PKWU%20RAYHAN%20&%20JULIAN%20finale.html" target="_blank" class="flex items-center space-x-2 bg-primary hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
-                            <span class="text-xl">🌐</span>
-                            <span>Game PKWU (HTML)</span>
-                        </a>
-                        <a href="Julian%20Rocketship%20Tugas.sb3" download class="flex items-center space-x-2 bg-primary/60 hover:bg-blue-600 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
-                            <span class="text-xl">🚀</span>
-                            <span>Julian Rocketship (SB3)</span>
-                        </a>
-                        <a href="Rayhan%20dan%20Julian%20TKJ%20Tugas%20Flappy%20Bird.sb3" download class="flex items-center space-x-2 bg-primary/60 hover:bg-blue-600 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
-                            <span class="text-xl">🐦</span>
-                            <span>Flappy Bird (SB3)</span>
-                        </a>
-                    </div>
-                    
-                    <h3 class="text-2xl font-semibold text-primary mb-4">Proyek Jaringan & Hardware</h3>
-                    <div class="flex justify-center space-x-6">
-                        <a href="#" target="_blank" class="flex items-center space-x-2 bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
-                            <span>Jaringan & Hardware (TKJ)</span>
-                        </a>
-                    </div>
-                    
-                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-4">
-                        (Untuk tautan di atas, silakan ganti nama file atau tanda '#' dengan tautan ke tempat file diunggah/diakses)
-                    </p>
-                </div>
-                <div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700 text-center">
-                    <h2 class="text-3xl font-bold text-secondary mb-6">Laporan & Dokumentasi Praktik 📋</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto">
-                        Kumpulan file dokumentasi resmi, laporan praktikum, skema konfigurasi jaringan, hingga *design document* proyek pribadi.
-                    </p>
+                    <h3 class="text-2xl font-semibold text-secondary mb-4">Proyek Game Developer</h3>
+                    <div class="flex flex-wrap justify-center gap-4 mb-6">
+                        <a href="Game%20Sampah_1_1.0.apk" download class="flex items-center space-x-2 bg-primary hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
+                            <span class="text-xl">📱</span>
+                            <span>Game Sampah (APK)</span>
+                        </a>
+                        <a href="Laporan_Game_Sampah%20Julian%20Daniel%20Rajiman%20Dan%20Ahmad%20rayhan.docx" download class="flex items-center space-x-2 bg-primary/80 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
+                            <span class="text-xl">📄</span>
+                            <span>Laporan Game Sampah (Docx)</span>
+                        </a>
+                        <a href="PKWU%20RAYHAN%20&%20JULIAN%20finale.html" target="_blank" class="flex items-center space-x-2 bg-primary hover:bg-blue-800 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
+                            <span class="text-xl">🌐</span>
+                            <span>Game PKWU (HTML)</span>
+                        </a>
+                        <a href="Julian%20Rocketship%20Tugas.sb3" download class="flex items-center space-x-2 bg-primary/60 hover:bg-blue-600 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
+                            <span class="text-xl">🚀</span>
+                            <span>Julian Rocketship (SB3)</span>
+                        </a>
+                        <a href="Rayhan%20dan%20Julian%20TKJ%20Tugas%20Flappy%20Bird.sb3" download class="flex items-center space-x-2 bg-primary/60 hover:bg-blue-600 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 text-sm">
+                            <span class="text-xl">🐦</span>
+                            <span>Flappy Bird (SB3)</span>
+                        </a>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Proyek Jaringan & Hardware</h3>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" target="_blank" class="flex items-center space-x-2 bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
+                            <span>Jaringan & Hardware (TKJ)</span>
+                        </a>
+                    </div>
+                    
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-4">
+                        (Untuk tautan di atas, silakan ganti nama file atau tanda '#' dengan tautan ke tempat file diunggah/diakses)
+                    </p>
+                </div>
+                <div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700 text-center">
+                    <h2 class="text-3xl font-bold text-secondary mb-6">Laporan & Dokumentasi Praktik 📋</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-3xl mx-auto">
+                        Kumpulan file dokumentasi resmi, laporan praktikum, skema konfigurasi jaringan, hingga *design document* proyek pribadi.
+                    </p>
                     
                     <h3 class="text-2xl font-semibold text-primary mb-4">Dokumen Tugas Sekolah</h3>
                     <div class="flex flex-wrap justify-center gap-4 mb-8">
@@ -272,163 +272,163 @@
                     </div>
                     
                     <h3 class="text-2xl font-semibold text-secondary mb-4">Dokumen Lainnya</h3>
-                    <div class="flex justify-center space-x-6">
-                        <a href="#" target="_blank" class="flex items-center space-x-2 bg-primary/90 hover:bg-primary text-white font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
-                            <span>Dokumentasi Konfigurasi TKJ</span>
-                        </a>
-                        <a href="#" target="_blank" class="flex items-center space-x-2 bg-secondary/90 hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
-                            <span>Laporan Praktik Mandiri</span>
-                        </a>
-                    </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-4">
-                        (Arahkan tautan '#' ini ke folder Google Drive atau cloud storage yang berisi file PDF/dokumen Anda)
-                    </p>
-                </div>
-                
-               
-                </div>
-        </section>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" target="_blank" class="flex items-center space-x-2 bg-primary/90 hover:bg-primary text-white font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
+                            <span>Dokumentasi Konfigurasi TKJ</span>
+                        </a>
+                        <a href="#" target="_blank" class="flex items-center space-x-2 bg-secondary/90 hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
+                            <span>Laporan Praktik Mandiri</span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-4">
+                        (Arahkan tautan '#' ini ke folder Google Drive atau cloud storage yang berisi file PDF/dokumen Anda)
+                    </p>
+                </div>
+                
+                
+                </div>
+        </section>
 
-        <section id="kontak" class="page-content">
-            <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl mx-auto">
-                <h2 class="text-4xl font-bold text-primary mb-6 text-center">Hubungi Saya</h2>
-                <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-8">
-                    Tertarik dengan keahlian saya? Mari berkolaborasi atau berdiskusi lebih lanjut tentang proyek IT.
-                </p>
+        <section id="kontak" class="page-content">
+            <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-primary mb-6 text-center">Hubungi Saya</h2>
+                <p class="text-center text-lg text-gray-600 dark:text-gray-400 mb-8">
+                    Tertarik dengan keahlian saya? Mari berkolaborasi atau berdiskusi lebih lanjut tentang proyek IT.
+                </p>
 
-                <form action="#" method="POST" class="space-y-6">
-                    <div>
-                        <label for="nama" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nama Lengkap</label>
-                        <input type="text" id="nama" name="nama" class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-700 dark:text-text-light" placeholder="Masukkan nama Anda" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-700 dark:text-text-light" placeholder="email@contoh.com" required>
-                    </div>
-                    <div>
-                        <label for="pesan" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Pesan</label>
-                        <textarea id="pesan" name="pesan" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-700 dark:text-text-light" placeholder="Tuliskan pesan Anda..." required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md shadow-lg transition duration-300 transform hover:scale-[1.01]">
-                        Kirim Pesan
-                    </button>
-                </form>
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="nama" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-700 dark:text-text-light" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-700 dark:text-text-light" placeholder="email@contoh.com" required>
+                    </div>
+                    <div>
+                        <label for="pesan" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Pesan</label>
+                        <textarea id="pesan" name="pesan" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-primary focus:border-primary dark:bg-gray-700 dark:text-text-light" placeholder="Tuliskan pesan Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-secondary hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-md shadow-lg transition duration-300 transform hover:scale-[1.01]">
+                        Kirim Pesan
+                    </button>
+                </form>
 
-                <div class="mt-8 pt-6 border-t dark:border-gray-700 text-center">
-                    <p class="text-gray-600 dark:text-gray-400">Atau hubungi saya melalui:</p>
-                    <div class="flex justify-center space-x-4 mt-3">
-                        <a href="mailto:juliandaniel819@gmail.com" class="text-primary hover:text-secondary transition duration-300 font-medium">Email</a>
-                        <span class="text-gray-400 dark:text-gray-600">|</span>
-                        <a href="https://wa.me/6283877661758" target="_blank" class="text-primary hover:text-secondary transition duration-300 font-medium">WhatsApp</a>
-                    </div>
-                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
-                        Nomor WhatsApp: 083877661758
-                    </p>
-                </div>
-            </div>
-        </section>
+                <div class="mt-8 pt-6 border-t dark:border-gray-700 text-center">
+                    <p class="text-gray-600 dark:text-gray-400">Atau hubungi saya melalui:</p>
+                    <div class="flex justify-center space-x-4 mt-3">
+                        <a href="mailto:juliandaniel819@gmail.com" class="text-primary hover:text-secondary transition duration-300 font-medium">Email</a>
+                        <span class="text-gray-400 dark:text-gray-600">|</span>
+                        <a href="https://wa.me/6283877661758" target="_blank" class="text-primary hover:text-secondary transition duration-300 font-medium">WhatsApp</a>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                        Nomor WhatsApp: 083877661758
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    </main>
+    </main>
 
-    <footer class="bg-gray-200 dark:bg-gray-900 text-center p-4 shadow-inner transition-colors duration-500">
-        <p class="text-sm text-gray-600 dark:text-gray-400">
-            &copy; 2024 Portofolio Julian Daniel Rajiman. Dibuat dengan semangat TKJ SMKN 12 Samarinda.
-        </p>
-    </footer>
+    <footer class="bg-gray-200 dark:bg-gray-900 text-center p-4 shadow-inner transition-colors duration-500">
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+            &copy; 2024 Portofolio Julian Daniel Rajiman. Dibuat dengan semangat TKJ SMKN 12 Samarinda.
+        </p>
+    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const pages = ['beranda', 'tentang', 'portofolio', 'kontak'];
-            const navLinks = document.querySelectorAll('.nav-link');
-            const themeToggle = document.getElementById('theme-toggle');
-            const body = document.body;
-            const sunIcon = document.getElementById('sun-icon');
-            const moonIcon = document.getElementById('moon-icon');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pages = ['beranda', 'tentang', 'portofolio', 'kontak'];
+            const navLinks = document.querySelectorAll('.nav-link');
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
 
-            /**
-             * Function to display the selected page content
-             * @param {string} pageId - The ID of the page section to show
-             */
-            window.showPage = (pageId) => {
-                // 1. Hide all pages
-                pages.forEach(id => {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        element.style.display = 'none';
-                    }
-                });
+            /**
+             * Function to display the selected page content
+             * @param {string} pageId - The ID of the page section to show
+             */
+            window.showPage = (pageId) => {
+                // 1. Hide all pages
+                pages.forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.style.display = 'none';
+                    }
+                });
 
-                // 2. Show the target page
-                const targetElement = document.getElementById(pageId);
-                if (targetElement) {
-                    targetElement.style.display = 'block';
-                    // Scroll to the top of the main content
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+                // 2. Show the target page
+                const targetElement = document.getElementById(pageId);
+                if (targetElement) {
+                    targetElement.style.display = 'block';
+                    // Scroll to the top of the main content
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
 
-                // 3. Update active link state
-                navLinks.forEach(link => {
-                    link.classList.remove('active-link', 'text-primary', 'dark:text-secondary', 'font-bold');
-                    link.classList.add('text-gray-600', 'dark:text-gray-300');
-                    if (link.getAttribute('data-page') === pageId) {
-                        link.classList.remove('text-gray-600', 'dark:text-gray-300');
-                        // Menggunakan text-primary dan dark:text-secondary sebagai warna aktif yang sudah Anda tentukan
-                        link.classList.add('active-link', 'text-primary', 'dark:text-secondary', 'font-bold');
-                    }
-                });
-            }
+                // 3. Update active link state
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link', 'text-primary', 'dark:text-secondary', 'font-bold');
+                    link.classList.add('text-gray-600', 'dark:text-gray-300');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.remove('text-gray-600', 'dark:text-gray-300');
+                        // Menggunakan text-primary dan dark:text-secondary sebagai warna aktif yang sudah Anda tentukan
+                        link.classList.add('active-link', 'text-primary', 'dark:text-secondary', 'font-bold');
+                    }
+                });
+            }
 
-            // --- Dark Mode Logic Start ---
+            // --- Dark Mode Logic Start ---
 
-            /**
-             * Function to apply the theme (dark or light)
-             * @param {boolean} isDark - True for dark mode, False for light mode
-             */
-            const applyTheme = (isDark) => {
-                if (isDark) {
-                    body.classList.add('dark');
-                    sunIcon.classList.remove('hidden');
-                    moonIcon.classList.add('hidden');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    body.classList.remove('dark');
-                    sunIcon.classList.add('hidden');
-                    moonIcon.classList.remove('hidden');
-                    localStorage.setItem('theme', 'light');
-                }
-            };
+            /**
+             * Function to apply the theme (dark or light)
+             * @param {boolean} isDark - True for dark mode, False for light mode
+             */
+            const applyTheme = (isDark) => {
+                if (isDark) {
+                    body.classList.add('dark');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    body.classList.remove('dark');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                    localStorage.setItem('theme', 'light');
+                }
+            };
 
-            // Check saved theme or system preference on load
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            // Check saved theme or system preference on load
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-            if (savedTheme) {
-                applyTheme(savedTheme === 'dark');
-            } else if (prefersDark) {
-                applyTheme(true);
-            } else {
-                applyTheme(false); // Default to light mode if no preference is found
-            }
-            
-            // Toggle button event listener
-            themeToggle.addEventListener('click', () => {
-                const isDark = body.classList.contains('dark');
-                applyTheme(!isDark);
-            });
+            if (savedTheme) {
+                applyTheme(savedTheme === 'dark');
+            } else if (prefersDark) {
+                applyTheme(true);
+            } else {
+                applyTheme(false); // Default to light mode if no preference is found
+            }
+            
+            // Toggle button event listener
+            themeToggle.addEventListener('click', () => {
+                const isDark = body.classList.contains('dark');
+                applyTheme(!isDark);
+            });
 
-            // --- Dark Mode Logic End ---
+            // --- Dark Mode Logic End ---
 
-            // Set up click listeners for navigation
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const pageId = e.target.getAttribute('data-page');
-                    showPage(pageId);
-                });
-            });
+            // Set up click listeners for navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const pageId = e.target.getAttribute('data-page');
+                    showPage(pageId);
+                });
+            });
 
-            // Initialize: Show the 'beranda' page on load
-            showPage('beranda');
-        });
-    </script>
+            // Initialize: Show the 'beranda' page on load
+            showPage('beranda');
+        });
+    </script>
 </body>
 </html>
